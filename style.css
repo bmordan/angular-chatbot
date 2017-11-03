@@ -1,0 +1,38 @@
+.bg-blur {
+  background-image: url(wallpaper.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-input {
+  background-image: url(chatpaper.jpg);
+  background-position: center top;
+  background-size: 100.5% auto;
+  background-repeat: no-repeat;
+}
+.vh-90 {
+  height: 90vh;
+}
+.speech-mark-l {} .speech-mark-l::after {
+  content: url(data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2215%22%20viewBox%3D%220%200%2020%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M.031%2014.074C5.811%2010.316%207.12%205.884%203.956.777h16.075c-1.726%206.388-8.393%2010.82-20%2013.297z%22%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E%0A);
+  position: absolute;
+  bottom: -17px;
+  right: 8px;
+}
+.speech-mark-r {} .speech-mark-r::after {
+  content: url(data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2215%22%20viewBox%3D%220%200%2020%2015%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M20.031%2014.074c-5.78-3.758-7.088-8.19-3.925-13.297H.031c1.727%206.388%208.393%2010.82%2020%2013.297z%22%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E%0A);
+  position: absolute;
+  bottom: -17px;
+  left: 8px;
+}
+input {
+  outline: none;
+  border-color: transparent;
+  padding: .5rem;
+}
+.active-btn {
+  opacity: .7;
+}
+.active-btn:active {
+  opacity: 1;
+}

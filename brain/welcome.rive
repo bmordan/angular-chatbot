@@ -1,0 +1,30 @@
+! version = 2.0
+
++ hi
+- nice -> I want to show you my timer -> type "set a timer"
+
++ set [a] (time|timer)
+* <get mins> == undefined => for how many minutes?{topic=less_than_sixty_minutes}
+* <get secs> == undefined => for how many seconds?{topic=less_than_sixty_seconds}
+- you have a timer for <get mins> mins and <get secs> seconds -> do you want to set a new timer? -> ["create new timer", "keep this timer"]
+
+> topic less_than_sixty_minutes
+  + #
+  * <star> < 60 => <set mins=<star>>for how many seconds?{topic=less_than_sixty_seconds}
+  - sorry, it has to be less than 60 minutes
+< less_than_sixty_minutes
+
+> topic less_than_sixty_seconds
+  + #
+  * <star> < 60 => <set secs=<star>><call>set_timer</call>{topic=random}
+  - oh, it has to be less than 60 seconds -> try again
+< topic
+
+> object set_timer javascript
+  const mins = arguments[0]._users.local_user.mins
+  const secs = arguments[0]._users.local_user.secs
+  this.setTimer({minutes: mins, seconds: secs})
+< object
+
++ *
+- I don't understand
