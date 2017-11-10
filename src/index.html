@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>chat interface</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="bundle.js"></script>
+  </head>
+  <body class="sans-serif" ng-controller="messageController">
+    <div class="center w-100 mw6 bg-blur pa4 db vh-90 relative">
+      <div class='overflow-y-hidden overflow-y-scroll absolute bottom-0 right-0 left-0 w-100'>
+        <div ng-repeat="msg in messages">
+          <div class="ma3 db flex items-center relative">
+            <div class="w-70 bg-white br1 pa2 pv3">
+              <div class="brown">{{ msg }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center w-100 mw6 bg-input db" ng-controller="inputController">
+      <form ng-hide="hide" class="flex items-center justify-end" ng-submit="submit()" style="min-height: 4rem;">
+        <div class="flex-auto dib pa3">
+          <input type="text" ng-model="input" class="w-100" ></input>
+        </div>
+        <div type="submit" class="flex-none dib pr3 white active-btn">
+          <svg width="36px" height="36px" viewBox="0 0 89 78" transform="translate(2.5, 1)" xmlns="http://www.w3.org/2000/svg">
+            <path d="M.492.414l88.361 38.642L.493 77.103V46.856l63.447-8.098L.492 30.48z" fill="currentColor" fill-rule="evenodd"/>
+          </svg>
+        </div>
+      </form>
+    </div>
+    <div class="center w-100 mw6 bg-input db" ng-controller="buttonController">
+      <div ng-hide="hide" class="flex items-center justify-center" style="min-height: 4rem;">
+        <div ng-repeat="btn in buttons" class="br-pill pa2 mh2 ba b--white bg-orange white pointer" ng-click="submit(btn)">{{ btn }}</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,11 +2,11 @@
   "name": "angular-chat",
   "version": "0.1.0",
   "description": "angular sketch of a bot",
-  "main": "main.js",
+  "main": "src/index.html",
   "scripts": {
-    "start": "http-server -p 3000 && npm run watch",
-    "build": "browserify src/main.js -o bundle.js",
-    "watch": "watch 'npm run build' ./src",
+    "serve": "http-server ./src -p 3000 -c-1",
+    "build": "browserify index.js -o src/bundle.js",
+    "watch": "watch 'npm run build' controllers directives",
     "test": "standard"
   },
   "repository": {
@@ -28,5 +28,8 @@
     "http-server": "^0.10.0",
     "standard": "^10.0.3",
     "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "angular": "^1.6.6"
   }
 }
