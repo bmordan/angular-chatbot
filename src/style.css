@@ -30,6 +30,9 @@ input {
   border-color: transparent;
   padding: .5rem;
 }
+[type=submit] {
+  -webkit-appearance: none;
+}
 .active-btn {
   opacity: .7;
 }
