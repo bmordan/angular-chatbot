@@ -1,6 +1,6 @@
 const RiveScript = require('rivescript')
 
-module.exports = ['$timeout', 'addToMessages', function ($timeout, addToMessages) {
+module.exports = ['$timeout', 'addToMessages', 'timer', function ($timeout, addToMessages, timer) {
   const self = this
   this._bot = new RiveScript()
 
@@ -22,5 +22,8 @@ module.exports = ['$timeout', 'addToMessages', function ($timeout, addToMessages
     const replies = self._bot.reply(user, str, this).split('->')
     if (!replies.length) return
     addToMessages.botReplies(replies)
+  }
+  this.setTimer = function (time) {
+    timer.setTimer(time)
   }
 }]

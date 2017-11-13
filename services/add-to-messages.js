@@ -11,6 +11,8 @@ module.exports = [function () {
     })
   }
   this.botReplies = function (replies) {
+    if (!Array.isArray(replies)) replies = [replies]
+
     replies.forEach(reply => {
       if (reply !== '') {
         this.messages.push({

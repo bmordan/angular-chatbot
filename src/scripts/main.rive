@@ -23,7 +23,7 @@
 > object set_timer javascript
   const mins = arguments[0]._users.local_user.mins
   const secs = arguments[0]._users.local_user.secs
-  this.setTimer({minutes: mins, seconds: secs})
+  this.setTimer({m: mins, s: secs})
 < object
 
 + *
