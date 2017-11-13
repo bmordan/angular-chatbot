@@ -4,22 +4,23 @@
     <title>chat interface</title>
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
     <link rel="stylesheet" href="style.css"/>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="bundle.js"></script>
   </head>
   <body class="sans-serif" ng-controller="messageController">
     <div class="center w-100 mw6 bg-blur pa4 db vh-90 relative">
       <div class='overflow-y-hidden overflow-y-scroll absolute bottom-0 right-0 left-0 w-100'>
-        <div ng-repeat="msg in messages">
-          <div class="ma3 db flex items-center relative">
+        <div ng-repeat="message in messages">
+          <div class="ma3 db flex items-center relative" ng-class="{'justify-start': !message.user, 'justify-end': message.user}">
             <div class="w-70 bg-white br1 pa2 pv3">
-              <div class="brown">{{ msg }}</div>
+              <div class="brown">{{ message.msg }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="center w-100 mw6 bg-input db" ng-controller="inputController">
-      <form ng-hide="hide" class="flex items-center justify-end" ng-submit="submit()" style="min-height: 4rem;">
+      <form ng-hide="$parent.hideInput" class="flex items-center justify-end" ng-submit="submit()" style="min-height: 4rem;">
         <div class="flex-auto dib pa3">
           <input type="text" ng-model="input" class="w-100" ></input>
         </div>
@@ -31,7 +32,7 @@
       </form>
     </div>
     <div class="center w-100 mw6 bg-input db" ng-controller="buttonController">
-      <div ng-hide="hide" class="flex items-center justify-center" style="min-height: 4rem;">
+      <div ng-hide="$parent.hideButtons" class="flex items-center justify-center" style="min-height: 4rem;">
         <div ng-repeat="btn in buttons" class="br-pill pa2 mh2 ba b--white bg-orange white pointer" ng-click="submit(btn)">{{ btn }}</div>
       </div>
     </div>

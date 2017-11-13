@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "http-server ./src -p 3000 -c-1",
     "build": "browserify index.js -o src/bundle.js",
-    "watch": "watch 'npm run build' controllers directives",
+    "watch": "watch 'npm run build' controllers directives services",
     "test": "standard"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "watch": "^1.0.2"
   },
   "dependencies": {
-    "angular": "^1.6.6"
+    "angular": "^1.6.6",
+    "rivescript": "^1.17.2"
   }
 }
