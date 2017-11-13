@@ -1,9 +1,8 @@
-module.exports = ['$scope', function ($scope) {
+module.exports = ['$scope', 'bot', function ($scope, bot) {
   $scope.input = ''
-  $scope.hide = true
   $scope.submit = function () {
-    const input = $scope.input
-    console.log({input})
+    if ($scope.input === '') return
+    bot.sendInput('local_user', $scope.input)
     $scope.input = ''
   }
 }]

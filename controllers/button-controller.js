@@ -1,10 +1,9 @@
-module.exports = ['$scope', function ($scope) {
+module.exports = ['$scope', 'bot', function ($scope, bot) {
   $scope.buttons = [
-    'A Button',
-    'B Button'
+    'Hi',
+    'Set a Timer'
   ]
-  $scope.hide = false
   $scope.submit = function (btn) {
-    console.log({btn})
+    bot.sendInput('local_user', btn)
   }
 }]
