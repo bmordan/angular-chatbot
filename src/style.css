@@ -7,7 +7,7 @@
 .bg-input {
   background-image: url(chatpaper.jpg);
   background-position: center top;
-  background-size: 100.5% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .vh-90 {
@@ -31,7 +31,7 @@ input {
   padding: .5rem;
 }
 button {
-  border: solid 0px; 
+  border: solid 0px;
 }
 [type=submit] {
   -webkit-appearance: none;

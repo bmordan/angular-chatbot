@@ -7,7 +7,8 @@
     "serve": "http-server ./src -p 3000 -c-1",
     "build": "browserify index.js -o src/bundle.js",
     "watch": "watch 'npm run build' controllers directives services",
-    "test": "standard"
+    "test": "standard",
+    "deploy": "surge --domain stmo.surge.sh -p ./src"
   },
   "repository": {
     "type": "git",

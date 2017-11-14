@@ -17,7 +17,7 @@ module.exports = ['$scope', '$timeout', 'timer', 'addToMessages', function ($sco
     const msg = `You meditated for ${mins} minute${mins === 1 ? '' : 's'} and ${secs} second${secs === 1 ? '' : 's'}`
     $timeout(function () {
       $scope.running = false
-      addToMessages.botReplies(msg)
+      addToMessages.botReplies([msg, '["set a timer", "how am I doing?", "something to meditate on"]'])
       $scope.timer.instance = null
     })
   })

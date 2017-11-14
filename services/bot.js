@@ -12,8 +12,7 @@ module.exports = ['$timeout', 'addToMessages', 'timer', function ($timeout, addT
       addToMessages.botReplies([
         'Hello',
         'I am a bot that can help you meditate',
-        'I\'m going to show you my timer',
-        'type "set a timer"'
+        '["set a timer"]'
       ])
     }, 500)
   })
