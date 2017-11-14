@@ -9,18 +9,18 @@
     <script src="bundle.js"></script>
   </head>
   <body class="sans-serif" ng-controller="messageController">
-    <div class="center w-100 bg-blur db vh-100 relative">
-      <div class='overflow-y-hidden overflow-y-scroll vh-90 absolute top-0 right-0 left-0 w-100 pa4'>
+    <div class="center w-100 bg-blur db vh-100 relative flex flex-column items-center justify-end">
+      <div class="flex-auto overflow-y-hidden overflow-y-scroll w-100 pa4">
         <div ng-repeat="message in messages">
           <div class="ma3 db flex items-center relative" ng-class="{'justify-start': !message.user, 'justify-end': message.user}">
-            <div class="w-70 bg-white br1 pa2 pv3">
+            <div class="w-90 bg-white br1 pa2 pv3">
               <div class="brown">{{ message.msg }}</div>
             </div>
           </div>
         </div>
       </div>
-      <div ng-controller="timerController">
-        <div ng-hide="!timer.instance" class="db bg-pink red absolute w-100" style="bottom: 70px;">
+      <div class="flex-none" ng-controller="timerController">
+        <div ng-hide="$parent.hide.timer" class="db bg-pink red absolute w-100">
           <div class="pa3">
             <h1 class="w-100 tc" ng-hide="running">{{ timer.instance.formattedDuration }}</h1>
             <h1 class="w-100 tc" ng-hide="!running">{{ display.time }}</h1>
@@ -31,8 +31,8 @@
           </div>
         </div>
       </div>
-      <div class="bg-input db absolute bottom-0 w-100" ng-controller="inputController">
-        <form ng-hide="$parent.hideInput" class="flex items-center justify-end" ng-submit="submit()" style="min-height: 4rem;">
+      <div class="flex-none bg-input db w-100" ng-controller="inputController">
+        <form ng-hide="$parent.hide.input" class="flex items-center justify-end" ng-submit="submit()" style="min-height: 4rem;">
           <div class="flex-auto dib pa3">
             <input type="text" ng-model="input" class="w-100" ></input>
           </div>
@@ -43,8 +43,8 @@
           </div>
         </form>
       </div>
-      <div class="bg-input db" ng-controller="buttonController">
-        <div ng-hide="$parent.hideButtons" class="flex items-center justify-center" style="min-height: 4rem;">
+      <div class="flex-none bg-input db" ng-controller="buttonController">
+        <div ng-hide="$parent.hide.buttons" class="flex items-center justify-center" style="min-height: 4rem;">
           <div ng-repeat="btn in buttons" class="br-pill pa2 mh2 ba b--white bg-orange white pointer" ng-click="submit(btn)">{{ btn }}</div>
         </div>
       </div>

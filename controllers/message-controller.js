@@ -1,5 +1,28 @@
-module.exports = ['$scope', 'addToMessages', 'timer', function ($scope, addToMessages, timer) {
+module.exports = ['$scope', '$timeout', 'addToMessages', 'timer', function ($scope, $timeout, addToMessages, timer) {
   $scope.messages = addToMessages.messages
-  $scope.hideInput = addToMessages.hideInput
-  $scope.hideButtons = addToMessages.hideButtons
+  $scope.hide = {
+    input: true,
+    buttons: true,
+    timer: true
+  }
+
+  $scope.$on('start', function () {
+    $timeout(function () {
+      $scope.hide = {
+        input: true,
+        buttons: true,
+        timer: false
+      }
+    })
+  })
+
+  $scope.$on('finish', function () {
+    $timeout(function () {
+      $scope.hide = {
+        input: true,
+        buttons: true,
+        timer: false
+      }
+    })
+  })
 }]

@@ -4,6 +4,9 @@ module.exports = ['$rootScope', function ($rootScope) {
   this.instance = null
   this.setTimer = (time) => {
     this.instance = new Timer(time)
+    this.instance.on('start', function () {
+      $rootScope.$broadcast('start', this.instance.formattedDuration)
+    })
     this.instance.on('tick', function (time) {
       $rootScope.$broadcast('tick', time)
     })
